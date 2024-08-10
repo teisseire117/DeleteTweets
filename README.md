@@ -2,6 +2,8 @@
 
 It should work just fine, I regularly use the script myself, but if anything wrong happens I am not taking any responsibility. Do not use this script if the 0.1% possible failure scares you.
 
+This script uses YOUR own personal Cookie data in order to function. DO NOT Fork this repo and enter in YOUR data from the tutorial. Otherwise OTHER PEOPLE on the internet can access YOUR account.
+
 # Prerequisites
 
 I use Google Chrome. I don't know if it will work elsewhere. It probably will, but if it doesn't, just try on Chrome.
