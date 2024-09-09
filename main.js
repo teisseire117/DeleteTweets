@@ -145,8 +145,8 @@ async function fetch_tweets(cursor, retry = 0) {
 
 	if (!response.ok) {
 		if (response.status === 429) {
-			console.log("Rate limit reached. Waiting 1 minute")
-			await sleep(1000 * 60);
+			console.log("Rate limit reached. Waiting 5 minutes")
+			await sleep(1000 * 300);
 			return fetch_tweets(cursor, retry + 1)
 		}
 		if (retry == 5) {
