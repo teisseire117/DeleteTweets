@@ -5,6 +5,7 @@
 
 - Start by copying the 'main.js' script
 - Go to https://twitter.com/
+  - Login into your account
 - Open the DevTools by pressing Ctrl + Shift + i
 - Click on the 'Console' tab
   - Paste the script (we'll come back later to it)
