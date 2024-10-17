@@ -68,6 +68,6 @@ var feature = `&features=%7B%22responsive_web_graphql_exclude_directive_enabled%
 
 ## Observations
 
-I'm not the original programmer of this project, I've merely forked the project to improve the tutorial, and something that I've observed it's that this script doesn't remove/delete your likes. I was able to remove all my tweets on one go but if there are leftovers just run the script a second time.
+I'm not the original programmer of this project I've merely forked the project to improve the tutorial, and something that I've observed it's that this script doesn't remove/delete your likes. I was able to remove all my tweets in one go but if there are leftovers just run the script a second time.
 
 The script still works and i think it's useful for anyone leaving twitter or that doesn't want to have their content used by AI.
