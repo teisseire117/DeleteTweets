@@ -1,14 +1,18 @@
-var authorization = "Bearer ***"; // replace by authorization value
+// Replace by Authorization value
+var authorization = "Bearer ***"; 
 var ua = navigator.userAgentData.brands.map(brand => `"${brand.brand}";v="${brand.version}"`).join(', ');
-var client_tid = "***"; // replace by X-Client-Transaction-Id value
-var client_uuid = "***"; // replace by X-Client-Uuid value
+// Replace by X-Client-Transaction-Id value
+var client_tid = "***";
+// Replace by X-Client-Uuid value
+var client_uuid = "***"; 
 var csrf_token = getCookie("ct0");
 var random_resource = "uYU5M2i12UhDvDTzN6hZPg";
 var random_resource_old_tweets = "H8OOoI-5ZE4NxgRr8lfyWg"
 var language_code = navigator.language.split("-")[0]
 var tweets_to_delete = []
 var user_id = getCookie("twid").substring(4);
-var username = "YourUsernameHere" // replace with your username
+// Replace with your username
+var username = "YourUsernameHere" 
 var stop_signal = undefined
 var twitter_archive_content = undefined
 var twitter_archive_loading_confirmed = false
