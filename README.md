@@ -25,7 +25,7 @@
   - var client_tid (replace by the X-Client-Transaction-Id)
   - var client_uuid (replace this by the guest_id)
   - var username (your twitter username)
-- Scroll down until the last line of the script and press 'Enter'
+- Press 'Enter' to run the script
 - When the deletion it's complete it should appear written on the console the following message: Deletion Complete, to see the results just refresh the page.
 
 ## Filtering / Options
