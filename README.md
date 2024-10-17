@@ -1,5 +1,5 @@
 # Prerequisites
-Google Chrome
+- Google Chrome
 
 ## Tutorial
 
