@@ -54,6 +54,13 @@ var delete_options = {
 	],
 	/* old_tweets : IF the script worked without any error but haven't deleted some old tweets, set this to true.*/
 	"old_tweets":false,
+
+	/* minimum  favorite / retweet count: IF you want to keep tweets with a certain amount of favorites or retweets.
+		only work in Archive mode.
+	*/
+	"min_favorite_count":99999999,
+	"min_retweet_count":99999999,
+
 	/*
 		after_date // before_date : allows you to delete tweets that belong in a specific time frame
 		In the example below, tweets that were made before 2100-01-01 AND after 1900-01-01 will be deleted. (these dates are not included. It's AFTER and BEFORE)
@@ -245,6 +252,14 @@ function check_filter_archive(tweet_obj) {
 	if ((delete_options["tweets_to_ignore"].includes(tweet_id) || delete_options["tweets_to_ignore"].includes( parseInt(tweet_id) ) )) {
 		return false
 	}
+	if (parseInt(tweet_obj["favorite_count"]) >= delete_options["min_favorite_count"])
+	{
+		return false
+	}
+	if (parseInt(tweet_obj["retweet_count"]) >= delete_options["min_retweet_count"])
+	{
+		return false
+	}
 	if (check_keywords(tweet_str) && check_date_archive(tweet_date))
 		return true
 	return false
@@ -277,6 +292,8 @@ function parseTweetsFromArchive(data) {
 				tweet_obj["id"] = item.tweet.id_str
 				tweet_obj["text"] = item.tweet.full_text
 				tweet_obj["date"] = item.tweet.created_at
+				tweet_obj["favorite_count"] = item.tweet.favorite_count
+				tweet_obj["retweet_count"] = item.tweet.retweet_count				
                 if (!isInReplyToExcludedUser
 					&& ((delete_options["unretweet"] == true && startsWithRT == true) || (delete_options["unretweet"] == false && startsWithRT == false))
 					&& check_filter_archive(tweet_obj)) {
