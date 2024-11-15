@@ -9,7 +9,10 @@ Add two options to skip tweets more than a certain amount of favorites or retwee
 "min_retweet_count":99999999,
 ```
 
-注意：代码**默认为不使用 archive 文件**，直接删除用户页面上的推文（可能只删最新的 3200 条）。如果配合 twitter 的导出文档删除，请先更改代码中的 from_archive 和 old_tweets 设置。
+注意：
+
+1. 代码**默认为不使用 archive 文件**，直接删除用户页面上的推文（可能只删最新的 3200 条）。如果配合 twitter 的导出文档删除，请先更改代码中的 from_archive 和 old_tweets 设置。
+2. 下面的原作者的攻略，在使用 Chrome Proxy 翻墙时，可能不好用，找不到 Bearer id。需要在全局翻墙模式下使用。
 
 ---
 
