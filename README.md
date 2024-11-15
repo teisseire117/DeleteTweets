@@ -1,3 +1,16 @@
+# Fork Notes
+
+添加了如下选项，推文中多于一定的 点赞/转发 数量的推文，将被略过，不被删除。只在使用 twitter 的导出文档进行删除时生效。
+
+```
+"min_favorite_count":99999999,
+"min_retweet_count":99999999,
+```
+
+注意：代码**默认为不使用 archive 文件**，直接删除用户页面上的推文（可能只删最新的 3200 条）。如果配合 twitter 的导出文档删除，请先更改代码中的 from_archive 和 old_tweets 设置。
+
+---
+
 # Disclaimer
 
 It should work just fine, I regularly use the script myself, but if anything wrong happens I am not taking any responsibility. Do not use this script if the 0.1% possible failure scares you.
@@ -12,8 +25,6 @@ I use Google Chrome. I don't know if it will work elsewhere. It probably will, b
 
 ##  Video Tutorial
 https://github.com/teisseire117/DeleteTweets/assets/43145883/249584c3-ce01-424b-8ce5-751e976c8df0
-
-
 
 ## Text Tutorial
 

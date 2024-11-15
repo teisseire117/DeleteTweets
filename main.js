@@ -55,7 +55,7 @@ var delete_options = {
 	/* old_tweets : IF the script worked without any error but haven't deleted some old tweets, set this to true.*/
 	"old_tweets":false,
 
-	/* minimum  favorite / retweet count: IF if you want to keep tweets with a certain amount of favorites or retweets.
+	/* minimum  favorite / retweet count: IF you want to keep tweets with a certain amount of favorites or retweets.
 		only work in Archive mode.
 	*/
 	"min_favorite_count":99999999,
