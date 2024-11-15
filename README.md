@@ -1,6 +1,8 @@
 # Fork Notes
 
-添加了如下选项，推文中多于一定的 点赞/转发 数量的推文，将被略过，不被删除。只在使用 twitter 的导出文档进行删除时生效。
+添加了两个选项，推文中多于一定的 点赞/转发 数量的推文，将被略过，不被删除。只在使用 twitter 的导出文档进行删除时生效。
+
+Add two options to skip tweets more than a certain amount of favorites or retweets,	only work in Archive mode.
 
 ```
 "min_favorite_count":99999999,
