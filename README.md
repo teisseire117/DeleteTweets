@@ -26,6 +26,54 @@ https://github.com/teisseire117/DeleteTweets/assets/43145883/249584c3-ce01-424b-
 - Now click on any request in the results, and look for the authorization/X-Client-Transaction-Id/X-Client-Uuid values, as in screenshot: ![pxN8nth](https://github.com/teisseire117/DeleteTweets/assets/43145883/8f6b0123-2f51-41da-a234-255c5bbb5589)
 - Now replace the values in the .js from this repository of the according variables, by the values of the three variables you found, here is an example of how it should look in the end : ![E0M6Bf9](https://github.com/teisseire117/DeleteTweets/assets/43145883/bac5806b-9c76-4018-b2c0-55fb9080e715)
 
+## Instructions for non-coders
+Based on a [comment](https://github.com/Lyfhael/DeleteTweets/issues/81#issuecomment-2483629760) by [trainerkelly](https://github.com/trainerkelly)
+
+You will need:
+- a browser like Chrome/Edge that has 'Developer Tools'. Search for instructions to turn Developer Tools on for your browser, as they're off by default.
+(The script might not work in Firefox. Sorry, FF fans.)
+- an app like Notepad or Notepad++ on Windows, or TextEdit on Mac, or sticky notes.
+
+This script (code) is written in JavaScript. Click into [main.js](https://github.com/Lyfhael/DeleteTweets/blob/main/main.js) to view and copy it. 
+
+### Edit the code
+Open a plain text file in Notepad or TextEdit or whatever. Paste the code from main.js into the file. 
+
+You now need to edit the code to include specific information so it can find your tweets to delete them. You'll use Developer Tools to get the information you need to edit in the code.
+
+In JavaScript (the programming language used – it's available on all web browsers), a variable just holds data. It's like a box with a label on it and the variable name is that label.
+
+The "var" is just a type of keyword that tells the browser "hey, this is the name of this variable, so when I use this name in the code, use the data stored in here". You'll want to replace the *** with data that you get from the developer tools in your browser.
+
+### Find the information you need
+In the case of this script, there are four spots you want to update the data inside of the variable (var):
+
+	var authorization = "Bearer ***";
+	var client_tid = "***"; // replace by X-Client-Transaction-Id value
+	var client_uuid = "***"; // replace by X-Client-Uuid value
+	var username = "YourUsernameHere" // replace with your username
+
+Right click in your browser and hit "Inspect" to bring up the Developer Tools. If you look towards the top of the developer tools, you'll see a series of small tabs. You want to click the "Network" one. Then you'll want to hit the button that says "XHR" (Firefox) / "Fetch/XHR" (Chrome). It'll bring up a list of connections that the site is bringing up over the network. I recommend using the filter in the Network tab to search for all.json (which is the one the example uses). Click it. Another panel should open up displaying a bunch of data.
+
+![Screenshot](https://private-user-images.githubusercontent.com/62313219/387315231-a9ae0f4d-1e50-4426-be99-7a21193ac9b4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzM2MDA2NjEsIm5iZiI6MTczMzYwMDM2MSwicGF0aCI6Ii82MjMxMzIxOS8zODczMTUyMzEtYTlhZTBmNGQtMWU1MC00NDI2LWJlOTktN2EyMTE5M2FjOWI0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEyMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMjA3VDE5MzkyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVhMjQ1N2NlNzNkNjJlNTYzZmEzYmM4YzJkZTc5MGJlNzRlMWE0YmNlMmU1NjM3ZDc4OTJlZjVmMDk1MWE3OWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.yzEcYpsYHeVQKl-MVt43xx-EHFz2_FJpUfkYt5_glPA "Screenshot of settings")
+
+In this second panel/section staying on the first tab (where it says "Headers"), scroll down to the "Request Headers" section. Scroll down to where it says "Authorization". Copy the info in the second column. You can leave out the keyword "Bearer" when you copy it because it's already inside of the string (collection of characters) inside of the variable.
+
+If you scroll down a bit further, you will see the X-Client-Transaction-Id and the X-Client-Uuid sections. Copy and paste the info in the second column inside of the variable where the *** is.
+
+Then lastly add your username.
+
+**_Make sure you leave the the quotation marks!!_** It tells the browser what kind of data type it is (in this case, these are strings). The code won't run properly if you remove them.
+
+Once that's done, check over the other options inside of the delete_options variable and see if you want any of them enabled / disabled. (If you want it enabled, use the keyword true (**without** quotations), otherwise use the keyword false. They're a data type called a boolean and it's basically yes / no.) There's some detailed explanations inside the code (between the /* */) for each section. I recommend reading them to see what you would like to enable.
+
+### Run the code
+You're going to use Developer Tools to run the code. Find the 'Console' tab. Copy the code you've edited, and paste it into the Console tab.
+
+Hit enter. The code should successfully run – all you'll need to do is wait.
+
+
+
 ## Filtering / Options
 - You can now choose to delete only tweets that are within a specific date range. For this, edit "before_date" and "after_date" in the `delete_options` variable. These will look like that :
 ```
